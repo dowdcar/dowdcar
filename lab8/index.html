@@ -125,17 +125,17 @@
   }).addTo(map);
 
 
-
-		L.control.layers(basemaps, overlaymaps,	{collapsed:false}).addTo(map);
-
 		var basemaps = {
 			"Light Canvas": canvas,
 			"Satellite Imagery": imagery
 		};
 
 		var overlaymaps = {
-		"China Provinces ": provinces
-		};
+		"China Provinces ": provinces,
+    "Covid cases": covidData,
+    };
+
+    L.control.layers(basemaps, overlaymaps,	{collapsed:false}).addTo(map);
 
     var legend = L.control({position: 'bottomright'}); // Try the other lower corner if you prefer.
 
@@ -168,6 +168,9 @@
                     legend.addTo(map);
                   }
                 });
+
+
+
 
         </script>
    </body>
